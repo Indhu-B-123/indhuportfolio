@@ -97,14 +97,6 @@
     $$(".reveal").forEach(function (el) { el.classList.add("visible"); });
   }
 
-  /* ---------- Resume button: show only if resume.pdf exists ---------- */
-  var resumeBtn = $("#resume-btn");
-  if (resumeBtn && location.protocol.indexOf("http") === 0) {
-    fetch(resumeBtn.getAttribute("href"), { method: "HEAD" })
-      .then(function (r) { if (r.ok) resumeBtn.hidden = false; })
-      .catch(function () {});
-  }
-
   /* ---------- Project filters ---------- */
   var filterBtns = $$(".filter");
   var cards = $$(".project");
